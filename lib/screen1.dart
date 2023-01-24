@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
+import 'screen2.dart';
 
 class Screen1 extends StatelessWidget {
   @override
@@ -6,13 +8,18 @@ class Screen1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Screen 1'),
+        title: Text(screen1Title),
       ),
       body: Center(
-        child: RaisedButton(
-          color: Colors.red,
-          child: Text('Go Forwards To Screen 2'),
-          onPressed: () {},
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+          child: Text('Go Forwards To $screen2Title'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Screen2()),
+            );
+          },
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 class Screen0 extends StatelessWidget {
   @override
@@ -6,23 +7,25 @@ class Screen0 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Text('Screen 0'),
+        title: Text(screen0Title),
       ),
       body: Center(
         child: Column(
           children: <Widget>[
-            RaisedButton(
-              color: Colors.red,
-              child: Text('Go To Screen 1'),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(foregroundColor: Colors.red),
+              child: Text('Go To $screen1Title'),
               onPressed: () {
                 //Navigate to Screen 1
+                Navigator.pushNamed(context, '/first');
               },
             ),
-            RaisedButton(
-              color: Colors.blue,
-              child: Text('Go To Screen 2'),
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(foregroundColor: Colors.blue),
+              child: Text('Go To $screen2Title'),
               onPressed: () {
                 //Navigate to Screen 2
+                Navigator.pushNamed(context, '/second');
               },
             ),
           ],
